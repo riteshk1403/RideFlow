@@ -1,0 +1,54 @@
+# =========================================================================
+# RideFlow Backend - Spring Boot / Java / Maven .gitignore
+# =========================================================================
+
+# Maven Build Target & Compiled Binaries
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# Logs & Temporary Files
+*.log
+logs/
+tmp/
+temp/
+
+# Secrets & Environment Overrides
+.env
+.env.*
+!.env.example
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.built-jar.properties
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
