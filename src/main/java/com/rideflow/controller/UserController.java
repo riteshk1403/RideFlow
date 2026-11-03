@@ -35,7 +35,7 @@ public class UserController {
     @Value("${RIDEFLOW_ADMIN_EMAIL:admin@rideflow.com}")
     private String adminEmail;
 
-    @Value("${RIDEFLOW_ADMIN_PASSWORD:Admin@123}")
+    @Value("${RIDEFLOW_ADMIN_PASSWORD:kengar7887}")
     private String adminPassword;
 
     private boolean isValidPassword(String password) {
