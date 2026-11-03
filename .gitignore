@@ -1,0 +1,124 @@
+# =========================================================================
+# RideFlow - Comprehensive Git Ignore
+# Covers: Spring Boot (Java/Maven), React (Node/npm), IDEs, OS, and Secrets
+# =========================================================================
+
+# -------------------------------------------------------------------------
+# Secrets & Environment Variables (CRITICAL: Never commit credentials)
+# -------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# -------------------------------------------------------------------------
+# Node.js & React Frontend
+# -------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# React Production Build Artifacts
+build/
+**/build/
+frontend/build/
+dist/
+**/dist/
+
+# -------------------------------------------------------------------------
+# Java & Spring Boot / Maven Backend
+# -------------------------------------------------------------------------
+target/
+**/target/
+backend/target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Maven specific
+.mvn/wrapper/maven-wrapper.jar
+!backend/.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# -------------------------------------------------------------------------
+# IDEs and Text Editors
+# -------------------------------------------------------------------------
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.built-jar.properties
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# -------------------------------------------------------------------------
+# Operating System Files
+# -------------------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+.directory
+
+# -------------------------------------------------------------------------
+# Logs and Runtime Temporary Files
+# -------------------------------------------------------------------------
+*.log
+logs/
+**/logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo

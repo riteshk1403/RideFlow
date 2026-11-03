@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="rfWheel" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="rfPoint" x1="18" y1="8" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#0f172a" />
+  <circle cx="24" cy="24" r="18" stroke="url(#rfWheel)" stroke-width="3" stroke-linecap="round" />
+  <path d="M 10 17 A 18 18 0 0 1 15 10" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" />
+  <path d="M 38 17 A 18 18 0 0 0 33 10" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" />
+  <path d="M 7.5 24.5 H 18.5" stroke="url(#rfWheel)" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M 29.5 24.5 H 40.5" stroke="url(#rfWheel)" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M 24 29.5 V 40.5" stroke="url(#rfWheel)" stroke-width="2.8" stroke-linecap="round" />
+  <path d="M 24 9.5 C 20.2 9.5 17.2 12.5 17.2 16.3 C 17.2 21.2 22.7 26.8 24 28 C 25.3 26.8 30.8 21.2 30.8 16.3 C 30.8 12.5 27.8 9.5 24 9.5 Z" fill="url(#rfPoint)" />
+  <circle cx="24" cy="16.3" r="2.8" fill="#0f172a" />
+  <circle cx="24" cy="16.3" r="1.4" fill="#38bdf8" />
+</svg>

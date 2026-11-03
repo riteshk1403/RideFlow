@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: rideflow-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - rideflow-mongo-data:/data/db
+    networks:
+      - rideflow-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rideflow-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - RIDEFLOW_MONGODB_URI=mongodb://mongodb:27017/rideflow
+      - RIDEFLOW_ADMIN_EMAIL=admin@rideflow.com
+      - RIDEFLOW_ADMIN_PASSWORD=Admin@123
+      - RIDEFLOW_ENCRYPTION_KEY=RideFlowSuperSecure256BitKey!Dev
+      - RIDEFLOW_EMAIL_HOST=smtp.gmail.com
+      - RIDEFLOW_EMAIL_PORT=587
+      - RIDEFLOW_EMAIL_USERNAME=kengarritesh3@gmail.com
+      - RIDEFLOW_EMAIL_PASSWORD=xmbpffvzgzyyphip
+    depends_on:
+      - mongodb
+    networks:
+      - rideflow-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=http://localhost:8080/api
+    container_name: rideflow-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - rideflow-net
+
+volumes:
+  rideflow-mongo-data:
+
+networks:
+  rideflow-net:
+    driver: bridge

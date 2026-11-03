@@ -1,0 +1,105 @@
+/* RideFlow Brand Logo Styling */
+.rf-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rf-brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.rf-logo-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.5), 0 0 16px rgba(99, 102, 241, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.rf-brand-logo:hover .rf-logo-badge {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.6), 0 0 24px rgba(56, 189, 248, 0.35);
+  transform: scale(1.04);
+}
+
+.rf-logo-badge.size-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  padding: 4px;
+}
+
+.rf-logo-badge.size-md {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  padding: 5px;
+}
+
+.rf-logo-badge.size-lg {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  padding: 6px;
+}
+
+.rf-logo-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.rf-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-logo-title {
+  font-family: 'Space Grotesk', 'Poppins', -apple-system, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+}
+
+.rf-logo-title.text-sm {
+  font-size: 1.25rem;
+}
+
+.rf-logo-title.text-md {
+  font-size: 1.55rem;
+}
+
+.rf-logo-title.text-lg {
+  font-size: 1.85rem;
+}
+
+.rf-logo-title .rf-gradient-flow {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-left: 1px;
+}
+
+.rf-logo-subtitle {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-top: 2px;
+}
