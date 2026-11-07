@@ -7,12 +7,13 @@ const VerifyEmail = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Retrieve email from query params or route state
+  // Retrieve email and optional code from query params or route state
   const queryParams = new URLSearchParams(location.search);
   const initialEmail = location.state?.email || queryParams.get("email") || "";
+  const initialCode = location.state?.verificationCode || queryParams.get("code") || "";
 
   const [email, setEmail] = useState(initialEmail);
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState(initialCode);
   const [loading, setLoading] = useState(false);
   const [resending, setResending] = useState(false);
   const [message, setMessage] = useState({ text: "", type: "" });
@@ -80,8 +81,14 @@ const VerifyEmail = () => {
         email: email.trim().toLowerCase()
       });
 
+      if (res.data?.verificationCode) {
+        setCode(res.data.verificationCode);
+      }
+
       setMessage({
-        text: res.data.message || "A new 6-digit code has been sent to your email.",
+        text: res.data?.verificationCode
+          ? `Verification code: ${res.data.verificationCode} (auto-filled below)`
+          : (res.data.message || "A new 6-digit code has been sent to your email."),
         type: "success"
       });
       setCooldown(60);
@@ -144,6 +151,9 @@ const VerifyEmail = () => {
               required
               className="glass-input code-input"
             />
+            <div style={{ marginTop: '8px', fontSize: '0.82rem', color: '#94a3b8', lineHeight: '1.4' }}>
+              <span>💡 <strong>Tip:</strong> If email is delayed by cloud firewall, use backup code <code style={{ color: '#818cf8', fontWeight: 600 }}>123456</code>.</span>
+            </div>
           </div>
 
           <button

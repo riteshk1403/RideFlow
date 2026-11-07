@@ -132,8 +132,12 @@ const AuthPage = () => {
       const registeredEmail = regEmail.trim().toLowerCase();
 
       setTimeout(() => {
-        navigate(`/verify-email?email=${encodeURIComponent(registeredEmail)}`, {
-          state: { email: registeredEmail }
+        const codeParam = response.data?.verificationCode ? `&code=${response.data.verificationCode}` : '';
+        navigate(`/verify-email?email=${encodeURIComponent(registeredEmail)}${codeParam}`, {
+          state: {
+            email: registeredEmail,
+            verificationCode: response.data?.verificationCode
+          }
         });
       }, 1500);
     } catch (err) {

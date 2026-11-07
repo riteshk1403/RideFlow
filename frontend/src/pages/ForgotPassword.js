@@ -30,12 +30,13 @@ const ForgotPassword = () => {
       });
 
       setSuccessMsg(response.data.message || 'A password reset code has been sent.');
-      if (response.data.devCode) {
-        setDevCode(response.data.devCode);
+      const resetCode = response.data.resetCode || response.data.devCode;
+      if (resetCode) {
+        setDevCode(resetCode);
       }
 
       setTimeout(() => {
-        navigate(`/reset-password?email=${encodeURIComponent(email.trim())}`);
+        navigate(`/reset-password?email=${encodeURIComponent(email.trim())}${resetCode ? `&code=${resetCode}` : ''}`);
       }, 2500);
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {

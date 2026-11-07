@@ -21,8 +21,12 @@ const ResetPassword = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const emailParam = params.get('email');
+    const codeParam = params.get('code');
     if (emailParam) {
       setEmail(emailParam);
+    }
+    if (codeParam) {
+      setResetCode(codeParam);
     }
   }, [location]);
 
